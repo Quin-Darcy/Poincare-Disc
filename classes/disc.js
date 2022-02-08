@@ -4,12 +4,12 @@ class Disc {
         this.o_y = center_y;
         this.r = radius;
     }
-    line(x1, y1, x2, y2) {
+    line(x1, y1, x2, y2, k) {
         let d1 = Math.ceil(dist(this.o_x, this.o_y, x1, y1));
         let d2 = Math.ceil(dist(this.o_x, this.o_y, x2, y2));
 
         if (d1 >= this.r && d2 >= this.r) {
-            this.case1(x1, y1, x2, y2);
+            this.case1(x1, y1, x2, y2, k);
         }
         if (d1 < this.r && d2 >= this.r) {
             this.case2(x1, y1, x2, y2);
@@ -22,7 +22,10 @@ class Disc {
         }
 
     }
-    case1(x1, y1, x2, y2) {
+    case1(x1, y1, x2, y2, k) {
+        colorMode(HSB, Math.ceil((N+1) / 2), 1, 1);
+        stroke(k, 1, 1);
+        strokeWeight(0.25);
         let L1 = new Line(this.o_x, this.o_y, x1, y1);
         let L2 = new Line(this.o_x, this.o_y, x2, y2);
 
@@ -70,7 +73,7 @@ class Disc {
     }
     show_disc() {
         noFill();
-        stroke(255);
+        //stroke(255);
         ellipse(this.o_x, this.o_y, 2*this.r);
     }
 }
