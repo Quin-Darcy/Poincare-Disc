@@ -37,8 +37,8 @@ class Disc {
         let b = inter[1];
         let r = dist(a, b, x1, y1);
 
-        L1.show_line();
-        L2.show_line();
+        //L1.show_line();
+        //L2.show_line();
 
         let theta_range = this.get_theta_range(x1, y1, x2, y2, a, b);
 
@@ -50,9 +50,6 @@ class Disc {
     get_theta_range(x1, y1, x2, y2, a, b) {
         let theta1 = Math.atan2(y1-b, x1-a);
         let theta2 = Math.atan2(y2-b, x2-a);
-
-        let theta3 = Math.atan2(y1-this.o_y, x1-this.o_x);
-        let theta4 = Math.atan2(y2-this.o_y, x2-this.o_x);
 
         theta1 = (theta1+2*Math.PI) % (2*Math.PI);
         theta2 = (theta2+2*Math.PI) % (2*Math.PI);
