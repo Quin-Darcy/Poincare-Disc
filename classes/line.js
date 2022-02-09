@@ -74,12 +74,12 @@ class Line {
         return [x1, y1, x2, y2];
     }
     show_segment() {
-        stroke(255);
+        //stroke(255);
         line(this.x1, this.y1, this.x2, this.y2);
     }
     show_ray() {
         let x2;
-        stroke(255);
+        //stroke(255);
         if (this.x1 <= this.x2) {
             x2 = 2*W;
         } else {
@@ -89,7 +89,7 @@ class Line {
         line(this.x1, this.y1, x2, y2);
     }
     show_line() {
-        stroke(255);
+        //stroke(255);
         let x1 = 2*W;
         let y1 = this.m*x1+this.b;
         let x2 = -2*W;
@@ -102,7 +102,7 @@ class Line {
         let x2 = 2*W;
         let y2 = this.perp_slope*x2 + this.bisect_intersept;
 
-        stroke(255);
+        //stroke(255);
         line(x1, y1, x2, y2);
     }
     show_tangent() {
@@ -111,7 +111,7 @@ class Line {
         let x2 = 2*W;
         let y2 = this.perp_slope*x2 + this.tangent_intercept;
 
-        stroke(255);
+        //stroke(255);
         line(x1, y1, x2, y2);
     }
 }

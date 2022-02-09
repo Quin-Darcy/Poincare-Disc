@@ -16,6 +16,7 @@ class Disc {
 
     }
     case1(x1, y1, x2, y2, k) {
+        noFill();
         colorMode(HSB, Math.ceil((N+1) / 2), 1, 1);
         stroke(k, 1, 1);
         strokeWeight(0.2);
@@ -43,9 +44,9 @@ class Disc {
     }
     case3(x1, y1, x2, y2, k) {
         noFill();
-        colorMode(HSB, Math.ceil((N+1) / 2), 1, 1);
+        colorMode(HSB, Math.ceil((N+1)/2), 1, 1);
         stroke(k, 1, 1);
-        strokeWeight(1);
+        strokeWeight(0.2);
 
         let L1 = new Line(this.o_x, this.o_y, x1, y1);
         let L2 = new Line(this.o_x, this.o_y, x2, y2);
@@ -79,6 +80,7 @@ class Disc {
         let theta_range = this.get_theta_range(x1, y1, x2, y2, Q[0], Q[1]);
 
         arc(Q[0], Q[1], 2*r, 2*r, theta_range[0], theta_range[1]);
+    
     }
     get_theta_range(x1, y1, x2, y2, a, b) {
         //return [0, 2*Math.PI];
@@ -103,6 +105,7 @@ class Disc {
         }
     }
     show_disc() {
+        strokeWeight(0.5)
         noFill();
         ellipse(this.o_x, this.o_y, 2*this.r);
         fill(255);
